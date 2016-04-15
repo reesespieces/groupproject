@@ -15,35 +15,22 @@ class Button {
   }
 
   void drawIt() {
-    fill(240); //fill in the button with this color
+    if(mouseX<x+w && mouseX>x && mouseY<y+h && mouseY>y){
+      fill(180);
+    }
+    else{
+      fill(150);
+    }
     noStroke(); //no outlines on the button
     rectMode(CORNER);
-    rect(x, y, w, h); //draws the button
+    rect(x, y, w, h, 5); //draws the button
 
     if (pressed == false) {
-      stroke(100);
-      strokeWeight(2);
-      line(x, y, x, y + h); //draw a line on the left side of the button
-      line(x, y + h, x + w, y + h); //draw a line on the bottom side
-
-      stroke(160);
-      strokeWeight(2);
-      line(x, y, x + w, y); //draw a line on the top side of the button
-      line(x + w, y, x + w, y + h); //draw a line on the right side
     }
 
 
     if (pressed == true) {
-      stroke(100);
-      strokeWeight(2);
-      line(x, y, x + w, y); //draw a line on the top side of the button
-      line(x + w, y, x + w, y + h); //draw a line on the right side
-
-
-      stroke(160);
-      strokeWeight(2);
-      line(x, y, x, y + h); //draw a line on the left side of the button
-      line(x, y + h, x + w, y + h); //draw a line on the bottom side
+      
     }
 
     //prints the label on the button
