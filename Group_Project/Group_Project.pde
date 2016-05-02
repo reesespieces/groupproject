@@ -6,6 +6,8 @@ AudioIn in2; //Creates another variable that takes in audio via the microphone
 int bands = 512; //??
 float[] spectrum = new float[bands]; //Array list of bands
 
+Button buttonExample = new Button(25, 25, 50, 100, "Button Example");
+
 void setup() {
   size(1280, 720, P3D); ///Size of the screen
 
@@ -47,5 +49,13 @@ void draw() {
     // The result of the FFT is normalized
     // draw the line for frequency band i scaling it up by 5 to get more amplitude.
     line( i, height, i, height - spectrum[i]*height*5 );
+  }
+  
+  buttonPressed(); //Calls on this function to see if a button has been pressed
+}
+
+void buttonPressed() {
+  if (mouseX > buttonExample.x && mouseX < buttonExample.x + buttonExample.w && mouseY > buttonExample.y && mouseY < buttonExample.y + buttonExample.h) { //If the mouse is witin the parameters (x and y positions) of the button....
+    //play song...
   }
 }
